@@ -537,12 +537,6 @@ button
     color: var(--main-color);
 }
 
-
-
-
-
-
-
 /*home-section*/
 .home-section
 {
@@ -551,24 +545,17 @@ button
 .home-section.active
 {
     display: flex;
-
 }
-.home-text
-{
 
-}
 .home-img
 {
-   height: 300px;
-   
-   
+   height: 300px; 
 }
 .box
 {
     width: 300px;
     height: 300px;
-    
-   
+     
 }
 
 .img-2
