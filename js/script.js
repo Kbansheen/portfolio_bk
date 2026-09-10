@@ -1,20 +1,16 @@
 /* ============================================================
-   Portfolio UI: theme, nav, reveal, modals, typewriter
+   Portfolio UI: nav, reveal, modals, typewriter, counters
    ============================================================ */
 
-/* ---------- Theme (light / dark) ---------- */
-(function initTheme() {
-    var saved = null;
-    try { saved = localStorage.getItem("bk-theme"); } catch (e) { /* no storage */ }
-    var theme = saved === "dark" ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", theme);
-})();
+/* ---------- Scroll progress bar ---------- */
+var progressEl = document.getElementById("scrollProgress");
 
-document.getElementById("themeToggle").addEventListener("click", function () {
-    var current = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", current);
-    try { localStorage.setItem("bk-theme", current); } catch (e) { /* no storage */ }
-});
+window.addEventListener("scroll", function () {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - doc.clientHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    progressEl.style.width = pct + "%";
+}, { passive: true });
 
 /* ---------- Mobile nav ---------- */
 var burger = document.getElementById("navBurger");
@@ -61,6 +57,48 @@ var revealObserver = new IntersectionObserver(function (entries) {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(".reveal").forEach(function (el) { revealObserver.observe(el); });
+
+/* ---------- Stat count-up ---------- */
+(function counters() {
+    var nums = document.querySelectorAll(".stat-num[data-count]");
+    if (!nums.length) return;
+
+    var reduceMotion = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function render(el) {
+        var target = parseInt(el.getAttribute("data-count"), 10);
+        var suffix = el.getAttribute("data-suffix") || "";
+
+        if (reduceMotion) {
+            el.textContent = target + suffix;
+            return;
+        }
+
+        var duration = 1400;
+        var start = null;
+
+        function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);   /* ease-out cubic */
+            el.textContent = Math.round(eased * target) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            render(entry.target);
+            counterObserver.unobserve(entry.target);
+        });
+    }, { threshold: 0.6 });
+
+    nums.forEach(function (el) { counterObserver.observe(el); });
+})();
 
 /* ---------- Project modals ---------- */
 var detailButtons = document.querySelectorAll(".proj-details-btn");
@@ -122,7 +160,7 @@ document.addEventListener("keydown", function (e) {
         var delay = deleting ? 35 : 75;
 
         if (!deleting && charIndex === word.length) {
-            delay = 2200;               // pause on full word
+            delay = 2200;               /* pause on full word */
             deleting = true;
         } else if (deleting && charIndex === 0) {
             deleting = false;
@@ -135,17 +173,6 @@ document.addEventListener("keydown", function (e) {
 
     setTimeout(tick, 2200);
 })();
-
-/* ---------- Back to top ---------- */
-var backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", function () {
-    backToTop.classList.toggle("show", window.scrollY > 500);
-}, { passive: true });
-
-backToTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
 
 /* ---------- Footer year ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
