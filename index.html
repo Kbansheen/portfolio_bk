@@ -3,469 +3,666 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Bansheen Kaur · Computer Science Engineer & AI Researcher</title>
+    <meta name="description" content="Portfolio of Bansheen Kaur — Computer Science engineer and published AI researcher. Projects and papers in RAG semantic search, Zero Trust cloud forensics, and full-stack development.">
+    <meta property="og:title" content="Bansheen Kaur · Computer Science Engineer & AI Researcher">
+    <meta property="og:description" content="Published AI researcher and software developer. RAG semantic search, Zero Trust cloud forensics, full-stack projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://kbansheen.github.io/portfolio_bk/images/bansh.jpg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- FONT AWESOME -->
-    <script src="https://kit.fontawesome.com/3773351d80.js" crossorigin="anonymous"></script>
-
-
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "aw0JCu2Mq8lfuuo13",
-      });
-   })();
-</script>
-
+    <!-- EmailJS (contact form) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            if (typeof emailjs !== "undefined") {
+                emailjs.init({ publicKey: "aw0JCu2Mq8lfuuo13" });
+            }
+        })();
+    </script>
 </head>
 <body>
 
-    <!-----page loader start----->
-<div class="page-loader">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+<!-- ======================= HEADER / NAV ======================= -->
+<header class="header" id="header">
+    <div class="nav-container">
+        <a href="#home" class="brand">
+            <span class="brand-mark">BK</span>
+            <span class="brand-name">Bansheen Kaur</span>
+        </a>
 
-    <!----background circles start-->
-    <div class="bg-circles">
-        <div class="circle-1"></div>
-        <div class="circle-2"></div>
-        <div class="circle-3"></div>
-        <div class="circle-4"></div>
-    </div>
+        <nav class="nav" id="nav">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
 
-
-    <!----overlay start-->
-    <div class="overlay">
-
-    </div>
-
-<div class="main hidden">
-
-<!--header start-->
-<header class="header">
-    <div class="container">
-        <div class="row flex-end">
-            <button type="button" class="nav-toggler">
-                <span></span>
+        <div class="nav-actions">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
             </button>
-            <nav class="nav">
-                <div class="nav-inner">
-                    <ul>
-
-                        <li><a href="#about" class="nav-item link-item">Home</a></li>
-                        <li><a href="#about" class="nav-item link-item">About</a></li>
-                        <li><a href="#portfolio" class="nav-item link-item">Portfolio</a></li>
-                        <li><a href="#contact" class="nav-item link-item">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <button type="button" class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </div>
 </header>
 
-<!--home section-->
-<section class="home-section align-items-center" id="home">
-<div class="container">
-    <div class="row align-items-center">
-        <div class="home-text">
-         <p>Hello, I'm</p>
-         <h1>bansheen kaur</h1>
-         <h2>Frontend Web Developer | Technical writer | Data Analyst | Cloud computer</h2>
-         <a href="#about" class="btn link-item">more about me</a>
-         <a href="#portfolio" class="btn link-item">portfolio</a>
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="home">
+    <div class="container hero-grid">
+        <div class="hero-text reveal">
+            <p class="hero-hello">Hello, I'm</p>
+            <h1 class="hero-name">Bansheen Kaur</h1>
+            <p class="hero-roles"><span id="typedRole">Computer Science Engineer</span><span class="type-cursor">|</span></p>
+            <p class="hero-pitch">
+                I build research-driven software — from RAG-based document search to
+                cloud security tooling — and I publish what I learn along the way.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-solid">View Projects</a>
+                <a href="#research" class="btn btn-outline">Publications</a>
+                <a href="resume_bansheenKaur.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download Résumé</a>
+            </div>
+            <div class="hero-links">
+                <a href="https://github.com/Kbansheen" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/bansheen-kaur-a8120b227" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                </a>
+                <a href="https://scholar.google.com/citations?hl=en&user=aLKNx3kAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@Bansheen_kaur" target="_blank" rel="noopener" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+                </a>
+            </div>
         </div>
 
-        <div class="home-img">
-            <div class="box" >
-                <img src="images/bansh.jpg" class="img-2" alt="">
+        <div class="hero-photo reveal">
+            <div class="photo-frame">
+                <img src="images/bansh.jpg" alt="Bansheen Kaur">
+            </div>
+            <div class="photo-badge badge-1">
+                <span class="badge-num">3</span>
+                <span class="badge-label">Published Papers</span>
+            </div>
+            <div class="photo-badge badge-2">
+                <span class="badge-num">B.Tech</span>
+                <span class="badge-label">CSE · 2025</span>
             </div>
         </div>
     </div>
-</div>
-</section>
 
-<!-----about section-->
-
-<section class="about-section sec-padding" id="about">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>about me</h1>
+        <div class="stats-strip reveal">
+            <div class="stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Research Papers Published</span>
             </div>
-        </div>
-        <div class="row">
-            <div class="about-img">
-                <div class="img-box">
-                    <img src="images/gr.png" alt="image">
-                </div>
+            <div class="stat">
+                <span class="stat-num">6</span>
+                <span class="stat-label">Internships Completed</span>
             </div>
-                <div class="about-text">
-                    <p class="about-me">I am a Computer Science professional with a strong background in software development and IT services. I have interned at Power Grid, FMRI, Salesforce, and Accenture, working on projects in data analytics and web development. Proficient in Python, Java, C/C++, JavaScript, PHP, HTML/CSS, SQL, and cloud computing, I have implemented various successful projects. I contribute to technical blogs, write review papers, and have presented research at conferences. I am a problem solver with leadership and team management skills, eager to contribute to innovative projects.</p>
-                    <h3>skills</h3>
-                    <div class="skills">
-                        <div class="skill-item">HTML/CSS</div>
-                        <div class="skill-item">Retrieval Augmented Generation</div>
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">Bootstrap</div>
-                        <div class="skill-item">SQL</div>
-                        <div class="skill-item">PHP</div>
-                        <div class="skill-item">C/C++</div>
-                        <div class="skill-item">Unix Programming</div>
-                        <div class="skill-item">Cloud computing</div>
-                        <div class="skill-item">Data analytics</div>
-                        <div class="skill-item">Python</div>
-                    </div>
-
-<div class="about-tabs">
-    <button type="button" class="tab-item active" data-target="#education">education</button>
-    <button type="button" class="tab-item" data-target="#experience">experience</button>
-</div>
-
-<!----education-->
-
-<div class="tab-content active" id="education">
-    <div class="timeline">
-        <div class="timeline-item">
-            <span class="date">2021 - 2025</span>
-            <h4>Bachelor of Technology [Computer Science] - <span>Amity University Haryana</span></h4>
-
-        </div>
-        <div class="timeline-item">
-            <span class="date">2020 - 2021</span>
-            <h4>Senior Secondary [CBSE] - <span>CCA School, Gurugram, Haryana</span></h4>
-
-        </div>
-        <div class="timeline-item">
-            <span class="date">2018 - 2019</span>
-            <h4>Secondary [ICSE] - <span>Lt. Atul Katarya Memorial School, Gurugram, Haryana</span></h4>
-
-        </div>
-    </div>
-</div>
-
-<!----experience start-->
-
-<div class="tab-content" id="experience">
-    <div class="timeline">
-        <div class="timeline-item">
-            <span class="date">Nov 2023 - Dec 2023 </span>
-            <h4>Developer Virtual Intern - <span>Salesforce</span></h4>
-            <p>Salesforce fundamentals, relationship and process automation, types of flows and security, apex, testing and debugging, lightning web components, Developer Super Set </p>
-        </div>
-        <div class="timeline-item">
-            <span class="date">July 2023 - Aug 2023 </span>
-            <h4>Intern - <span>FMRI (Fortis Memorial Research Institute)</span></h4>
-            <p>Implementation and configuration of ManageEngine ServiceDesk Plus and PACS software.   </p>
-        </div>
-        <div class="timeline-item">
-            <span class="date">Feb 2023 - Mar 2023 </span>
-            <h4>Developer Virtual Intern - <span>Accenture</span></h4>
-            <p>Completed practical tasks in technical requirements, architecture, testing and security.  </p>
-        </div>
-        <div class="timeline-item">
-            <span class="date">Nov 2023 - Dec 2023 </span>
-            <h4>Azure Cloud Computing Intern - <span>Smartknower internships</span></h4>
-            <p>Learnt basics like creating virtual machines and login using the RDP protocols as a cloud administrator.   </p>
-        </div>
-        <div class="timeline-item">
-            <span class="date">Oct 2020 - Dec 2020 </span>
-            <h4>Digital Marketing and Entrepreneurship Intern - <span>Mindler</span></h4>
-            <p>Exposure to work orientness, mental and social skills through continuous drives and training programmes by international speakers. </p>
-        </div>
-    </div>
-</div>
-
-
-
-<a href="resume_bansheenKaur.pdf" target="_blank" class="btn">Download CV</a>
-<a href="#contact" class="btn link-item">Contact me</a>
-
-
-
-
-                </div>
+            <div class="stat">
+                <span class="stat-num">7+</span>
+                <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">8+</span>
+                <span class="stat-label">Technologies</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!---portfolio section-->
-
-<section class="portfolio-section sec-padding" id="portfolio">
+<!-- ======================= ABOUT ======================= -->
+<section class="section" id="about">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Recent Projects</h2>
-            </div>
+        <div class="section-head reveal">
+            <span class="eyebrow">About</span>
+            <h2>Who I Am</h2>
         </div>
-        <div class="row">
 
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>
+                    I'm a Computer Science graduate (B.Tech, Amity University Haryana, 2025) with a strong
+                    interest in software development, AI research, and IT services. Through internships at
+                    FMRI (Fortis Memorial Research Institute), Salesforce, Accenture, Power Grid and others,
+                    I've worked on data analytics, web development, and enterprise IT tools.
+                </p>
+                <p>
+                    Alongside engineering, I do research: I have published papers on Retrieval-Augmented
+                    Generation with semantic search and on combining AI with Zero Trust principles for cloud
+                    forensics. I enjoy turning research ideas into working projects — and writing clearly
+                    about what I learn.
+                </p>
+                <ul class="about-facts">
+                    <li><span>Degree</span>B.Tech in Computer Science, Amity University Haryana (2021 – 2025)</li>
+                    <li><span>Focus</span>AI research, cloud security, full-stack development</li>
+                    <li><span>Email</span><a href="mailto:banshofficial123@gmail.com">banshofficial123@gmail.com</a></li>
+                </ul>
+            </div>
 
-
-            <div class="portfolio-item">
-                <div class="portfolio-item-thumbnail">
-                    <img src="images/l1.png" alt="">
-                </div>
-                <h3 class="portfolio-item-title">RAG using semantic search (PDF Analyser)</h3>
-                <button type="button" class="btn view-project-btn">View project</button>
-                <div class="portfolio-item-details">
-                    <div class="pp-thumbnail">
-                        <img src="images/l2.png" class="mm">
-                        <img src="images/l3.png" alt="" class="mm">
-                        <img src="images/l4.png" alt="" class="mm">
-                        
+            <div class="skills reveal" id="skills">
+                <h3 class="skills-title">Skills</h3>
+                <div class="skill-group">
+                    <h4>Languages</h4>
+                    <div class="chips">
+                        <span class="chip">Python</span>
+                        <span class="chip">Java</span>
+                        <span class="chip">C/C++</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">PHP</span>
+                        <span class="chip">SQL</span>
                     </div>
-                  <div class="description">
-                    <p>Implemented text chunking to integrate ChatGPT with LangChain,
-                        enhancing it with RAG techniques. Developed a user-friendly chat-with-aPDF web app.
-                        </p>
-                  </div>
-                  <div class="general-info">
-                    <ul>
-                        <li>Created - <span>March 2024</span></li>
-                        <li>Technologies used - <span>HTML/CSS, RAG, LangChain framework, Python, ReactJS</span></li>
-                        <li>Role - <span>Frontend and backend</span></li>
-                        <li>View Online - <span><a href="https://docs.google.com/presentation/d/1GXvBg4e7t9vVru5cG6AiteeTp5eGPJsX/edit#slide=id.p1">Click here</a></span></li>
-    
-                    </ul>
-                  </div>
                 </div>
-              </div>
-
-
-
-            <div class="portfolio-item">
-                <div class="portfolio-item-thumbnail">
-                    <img src="images/manage.png" alt="">
-                </div>
-                <h3 class="portfolio-item-title">ManageEngine ServiceDesk+</h3>
-                <button type="button" class="btn view-project-btn">View project</button>
-                <div class="portfolio-item-details">
-                    <div class="pp-thumbnail">
-                        <img src="images/m2.png" class="mm">
-                        <img src="images/m3.png" alt="" class="mm">
-                        <img src="images/m4.png" alt="" class="mm">
+                <div class="skill-group">
+                    <h4>Web & Frameworks</h4>
+                    <div class="chips">
+                        <span class="chip">HTML/CSS</span>
+                        <span class="chip">Bootstrap</span>
+                        <span class="chip">ReactJS</span>
+                        <span class="chip">Lightning Web Components</span>
                     </div>
-                  <div class="description">
-                    <p>Implemented and configured FMRI's IT tool: ManageEngine ServiceDesk plus</p>
-                    <p>Developed frontend for ManageEngine ServiceDesk, allowing users to submit requests. Backend PHP script processes requests,
-                        storing them in MySQL for real-time display on the interface.</p>
-                  </div>
-                  <div class="general-info">
-                    <ul>
-                        <li>Created - <span>July 2023 during internship at Fortis Memorial Research Institute</span></li>
-                        <li>Technologies used - <span>HTML, CSS, Bootstrap, JavaScript, PHP, MySQL</span></li>
-                        <li>Role - <span>Frontend and Backend integration</span></li>
-                        <li>View Online - <span><a href="https://summerintern.000webhostapp.com/">Click here</a></span></li>
-
-                    </ul>
-                  </div>
                 </div>
-              </div>
-
-          <div class="portfolio-item">
-            <div class="portfolio-item-thumbnail">
-                <img src="images/tin.png" alt="">
-            </div>
-            <h3 class="portfolio-item-title">Tindog website</h3>
-            <button type="button" class="btn view-project-btn">View project</button>
-            <div class="portfolio-item-details">
-                <div class="pp-thumbnail">
-                    <img src="images/t2.png" class="mm">
-                    <img src="images/t3.png" alt="" class="mm">
-                    
+                <div class="skill-group">
+                    <h4>AI & Data</h4>
+                    <div class="chips">
+                        <span class="chip">Retrieval-Augmented Generation</span>
+                        <span class="chip">LangChain</span>
+                        <span class="chip">Semantic Search</span>
+                        <span class="chip">Data Analytics</span>
+                    </div>
                 </div>
-              <div class="description">
-                <p>Designed a fully functional frontend for the Tindog website using HTML, CSS, and Bootstrap with gradient animations and
-                    ensured responsiveness for optimal user experience across devices.</p>
-              </div>
-              <div class="general-info">
-                <ul>
-                    <li>Created - <span>July 2022</span></li>
-                    <li>Technologies used - <span>HTML, CSS, Bootstrap</span></li>
-                    <li>Role - <span>Frontend</span></li>
-                    <li>View Online - <span><a href="https://kbansheen.github.io/tindog-website/">Click here</a></span></li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-
-
-        
-          <div class="portfolio-item">
-            <div class="portfolio-item-thumbnail">
-                <img src="images/space.png" alt="">
-            </div>
-            <h3 class="portfolio-item-title">Space tech website</h3>
-            <button type="button" class="btn view-project-btn">View project</button>
-            <div class="portfolio-item-details">
-                <div class="pp-thumbnail">
-                    <img src="images/html.png" class="mm">
-                    
+                <div class="skill-group">
+                    <h4>Cloud, Security & Tools</h4>
+                    <div class="chips">
+                        <span class="chip">Cloud Computing</span>
+                        <span class="chip">Microsoft Azure</span>
+                        <span class="chip">Zero Trust</span>
+                        <span class="chip">Unix Programming</span>
+                        <span class="chip">Git & GitHub</span>
+                        <span class="chip">MySQL</span>
+                    </div>
                 </div>
-              <div class="description">
-                <p>Designed a fully functional frontend for the Space website using HTML, CSS, and Bootstrap with gradient animations and
-                    ensured responsiveness for optimal user experience across devices.</p>
-              </div>
-              <div class="general-info">
-                <ul>
-                    <li>Created - <span>July 2022</span></li>
-                    <li>Technologies used - <span>HTML, CSS, Bootstrap</span></li>
-                    <li>Role - <span>Frontend</span></li>
-                    <li>View Online - <span><a href="https://kbansheen.github.io/space-website/">Click here</a></span></li>
-
-                </ul>
-              </div>
             </div>
-          </div>
-
-
-          <div class="portfolio-item">
-            <div class="portfolio-item-thumbnail">
-                <img src="images/html.png" alt="">
-            </div>
-            <h3 class="portfolio-item-title">Basic portfolio page</h3>
-            <button type="button" class="btn view-project-btn">View project</button>
-            <div class="portfolio-item-details">
-                <div class="pp-thumbnail">
-                    <img src="images/html.png" class="mm">
-                    <img src="images/bb.png" alt="" class="mm">
-                 
-                    
-                </div>
-              <div class="description">
-                <p>Designed basic portfolio using HTML, CSS</p>
-              </div>
-              <div class="general-info">
-                <ul>
-                    <li>Created - <span>March 2021</span></li>
-                    <li>Technologies used - <span>HTML/CSS</span></li>
-                    <li>Role - <span>Frontend</span></li>
-                    <li>View Online - <span><a href="https://kbansheen.github.io/html-portfolio/">Click here</a></span></li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-
-
         </div>
     </div>
 </section>
 
-
-<!----contact section start-->
-<section class="contact-section sec-padding" id="contact">
+<!-- ======================= RESEARCH ======================= -->
+<section class="section section-alt" id="research">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Contact Me</h2>
-            </div>
-        </div>
-        <div class="row">
-           <div class="contact-form">
-            <form>
-                <div class="row">
-                <div class="input-group">
-                    <input type="text" placeholder="Name" class="input-control" id="name" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Email" class="input-control" id="email" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Subject" class="input-control" id="subject" required>
-                </div>
-
-                <div class="input-group">
-                    <textarea placeholder="Message" class="input-control" id="message" required></textarea>
-                </div>
-                <div class="submit-btn">
-                    <button type="submit" class="btn" onclick="sendMail()">Send message</button>
-                </div>
-                </div>
-            </form>
-           </div>
-
-           <script type="text/javascript" src="js/index.js"></script>
-          
-
-           <div class="contact-info">
-             <div class="contact-info-item">
-                <h3>Email</h3>
-                <p>banshofficial123@gmail.com</p>
-             </div>
-             <div class="contact-info-item">
-                <h3>Phone</h3>
-                <p>+91 8826912555</p>
-             </div>
-             <div class="contact-info-item">
-                <h3>follow me</h3>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/bansheen-kaur-a8120b227   " target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Kbansheen" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.youtube.com/@Bansheen_kaur" target="_blank"><i class="fab fa-youtube"></i></a>
-
-                </div>
-             </div>
-           </div>
+        <div class="section-head reveal">
+            <span class="eyebrow">Research</span>
+            <h2>Publications</h2>
+            <p class="section-sub">Peer-reviewed papers from my research work.</p>
         </div>
 
+        <div class="pub-grid">
+            <article class="pub-card reveal">
+                <div class="pub-top">
+                    <span class="pub-badge">Published · AIP Conference Proceedings</span>
+                </div>
+                <h3>Retrieval-Augmented Generation with Semantic Search</h3>
+                <p>
+                    A study on improving document retrieval by combining semantic search with RAG,
+                    using large language models for intelligent knowledge retrieval. Presented at ISCS 2025.
+                </p>
+                <div class="pub-links">
+                    <a href="https://pubs.aip.org/aip/acp/article-abstract/3426/1/020016/3393206/Retrieval-augmented-generation-with-semantic" target="_blank" rel="noopener" class="pub-link">Read Paper
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    </a>
+                    <a href="https://github.com/Kbansheen/rag-semantic-search-document-retrieval" target="_blank" rel="noopener" class="pub-link">Implementation
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="pub-card reveal">
+                <div class="pub-top">
+                    <span class="pub-badge">Published · IEEE</span>
+                </div>
+                <h3>Integrating AI and Zero Trust in Cloud Forensics &amp; Incident Response</h3>
+                <p>
+                    A review of how security can move beyond perimeter defence toward continuous,
+                    AI-assisted verification — covering Zero Trust architecture, behavioural analytics,
+                    and intelligent incident response for cloud environments.
+                </p>
+                <div class="pub-links">
+                    <a href="https://ieeexplore.ieee.org/document/11386291" target="_blank" rel="noopener" class="pub-link">Read Paper
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    </a>
+                    <a href="https://github.com/Kbansheen/AI-Cloud-Forensics-Zero-Trust" target="_blank" rel="noopener" class="pub-link">Implementation
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="pub-card reveal">
+                <div class="pub-top">
+                    <span class="pub-badge">Published · Review Paper</span>
+                </div>
+                <h3>Role of Nanomaterials in Li-Fi</h3>
+                <p>
+                    A review of how nanomaterials can enhance Li-Fi communication systems and their
+                    potential in next-generation wireless communication.
+                </p>
+                <div class="pub-links">
+                    <span class="pub-link pub-link-muted">Paper available on request</span>
+                </div>
+            </article>
+        </div>
+
+        <p class="research-note reveal">
+            I'm currently building on the Zero Trust review with a working implementation — adaptive trust
+            evaluation, AI-assisted cloud forensics, and intelligent incident response. Code and findings
+            will be published as this work progresses.
+        </p>
     </div>
 </section>
 
+<!-- ======================= PROJECTS ======================= -->
+<section class="section" id="projects">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Portfolio</span>
+            <h2>Selected Projects</h2>
+            <p class="section-sub">Research implementations, engineering work, and web builds.</p>
+        </div>
 
+        <div class="proj-grid">
 
-</div>
-
-
-<!---portfolio popups start-->
-<div class="portfolio-popup">
-    <div class="pp-inner">
-        <div class="pp-content">
-            <div class="pp-header">
-                <button type="button" class="btn pp-close"><i class="fas fa-times"></i></button>
-                
-                <h3>app landinh</h3>
-            </div>
-            <div class="pp-body">
-                <div class="pp-thumbnail">
-                    <img src="images/m2.png" class="mm">
-                    
+            <!-- Zero Trust -->
+            <article class="proj-card reveal">
+                <div class="proj-thumb thumb-shield">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                 </div>
-                <div class="description">
-                    <p>Designed a fully functional frontend for the Tindog website using HTML, CSS, and Bootstrap with gradient animations and
-                        ensured responsiveness for optimal user experience across devices.</p>
-                  </div>
-                  <div class="general-info">
-                    <ul>
-                        <li>Created - <span>July 2022</span></li>
-                        <li>Technologies used - <span>HTML, CSS</span></li>
-                        <li>Role - <span>Frontend</span></li>
-                        <li>View Online - <span><a href="#">Click here</a></span></li>
+                <div class="proj-body">
+                    <span class="proj-tag">Research Implementation · Python</span>
+                    <h3>AI Cloud Forensics &amp; Zero Trust</h3>
+                    <p>Simulation suite implementing adaptive trust evaluation, AI-assisted cloud forensics, and intelligent incident response — the working codebase behind my IEEE review paper.</p>
+                    <div class="proj-actions">
+                        <button type="button" class="btn btn-small btn-solid proj-details-btn" data-project="zerotrust">Details</button>
+                        <a href="https://github.com/Kbansheen/AI-Cloud-Forensics-Zero-Trust" target="_blank" rel="noopener" class="btn btn-small btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </article>
 
-                    </ul>
-                  </div>
-            </div>
+            <!-- RAG -->
+            <article class="proj-card reveal">
+                <div class="proj-thumb">
+                    <img src="images/l1.png" alt="RAG semantic search application screenshot">
+                </div>
+                <div class="proj-body">
+                    <span class="proj-tag">Research Implementation · Python</span>
+                    <h3>RAG Semantic Search (PDF Analyser)</h3>
+                    <p>A chat-with-your-PDF web app built on LangChain and RAG techniques with text chunking for accurate, context-aware retrieval.</p>
+                    <div class="proj-actions">
+                        <button type="button" class="btn btn-small btn-solid proj-details-btn" data-project="rag">Details</button>
+                        <a href="https://github.com/Kbansheen/rag-semantic-search-document-retrieval" target="_blank" rel="noopener" class="btn btn-small btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </article>
 
+            <!-- FMRI -->
+            <article class="proj-card reveal">
+                <div class="proj-thumb">
+                    <img src="images/manage.png" alt="FMRI IT service portal screenshot">
+                </div>
+                <div class="proj-body">
+                    <span class="proj-tag">IT Service Management · PHP/MySQL</span>
+                    <h3>FMRI IT Service Portal</h3>
+                    <p>ITSM implementation at Fortis Memorial Research Institute: ManageEngine ServiceDesk Plus configuration plus a custom request portal with a PHP/MySQL backend.</p>
+                    <div class="proj-actions">
+                        <button type="button" class="btn btn-small btn-solid proj-details-btn" data-project="fmri">Details</button>
+                        <a href="https://github.com/Kbansheen/fmrii-website" target="_blank" rel="noopener" class="btn btn-small btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tindog -->
+            <article class="proj-card reveal">
+                <div class="proj-thumb">
+                    <img src="images/tin.png" alt="Tindog website screenshot">
+                </div>
+                <div class="proj-body">
+                    <span class="proj-tag">Frontend · HTML/CSS/Bootstrap</span>
+                    <h3>Tindog Website</h3>
+                    <p>A fully responsive TinDog landing page built with HTML, CSS and Bootstrap, with gradient animations and a mobile-first layout.</p>
+                    <div class="proj-actions">
+                        <button type="button" class="btn btn-small btn-solid proj-details-btn" data-project="tindog">Details</button>
+                        <a href="https://github.com/Kbansheen/tindog-website" target="_blank" rel="noopener" class="btn btn-small btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Space -->
+            <article class="proj-card reveal">
+                <div class="proj-thumb">
+                    <img src="images/space.png" alt="Space tech website screenshot">
+                </div>
+                <div class="proj-body">
+                    <span class="proj-tag">Frontend · HTML/CSS/Bootstrap</span>
+                    <h3>Space Tech Website</h3>
+                    <p>A responsive space-technology landing page built with HTML, CSS and Bootstrap with clean section design across devices.</p>
+                    <div class="proj-actions">
+                        <button type="button" class="btn btn-small btn-solid proj-details-btn" data-project="space">Details</button>
+                        <a href="https://github.com/Kbansheen/space-website" target="_blank" rel="noopener" class="btn btn-small btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </article>
 
         </div>
     </div>
+</section>
 
+<!-- ======================= PROJECT MODALS ======================= -->
+<div class="modal" id="modal-zerotrust" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+        <button type="button" class="modal-close" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-cover thumb-shield">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="modal-body">
+            <h3>AI Cloud Forensics &amp; Zero Trust</h3>
+            <p>A working simulation suite that puts my IEEE review into practice. It models Zero Trust
+                access decisions for cloud resources, evaluates trust from behaviour, and runs adaptive
+                incident-response workflows.</p>
+            <ul class="modal-points">
+                <li>Continuous verification &amp; least-privilege access simulation</li>
+                <li>Behaviour-based trust evaluation and anomaly detection</li>
+                <li>AI-assisted evidence collection for cloud investigations</li>
+                <li>Intelligent, automated incident-response workflows</li>
+            </ul>
+            <div class="modal-meta">
+                <div><span>Built with</span>Python · JavaScript · Jupyter</div>
+                <div><span>Role</span>Research &amp; development</div>
+                <div><span>Linked paper</span>IEEE — Integrating AI and Zero Trust in Cloud Forensics &amp; Incident Response</div>
+            </div>
+            <div class="modal-links">
+                <a href="https://github.com/Kbansheen/AI-Cloud-Forensics-Zero-Trust" target="_blank" rel="noopener" class="btn btn-solid btn-small">View on GitHub</a>
+                <a href="https://ieeexplore.ieee.org/document/11386291" target="_blank" rel="noopener" class="btn btn-outline btn-small">Read the Paper</a>
+            </div>
+        </div>
+    </div>
 </div>
 
+<div class="modal" id="modal-rag" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+        <button type="button" class="modal-close" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-shots">
+            <img src="images/l2.png" alt="RAG app screenshot 1">
+            <img src="images/l3.png" alt="RAG app screenshot 2">
+            <img src="images/l4.png" alt="RAG app screenshot 3">
+        </div>
+        <div class="modal-body">
+            <h3>RAG Semantic Search (PDF Analyser)</h3>
+            <p>A chat-with-your-PDF web app. Documents are chunked and embedded, then a large language
+                model answers questions grounded in retrieved context — built with LangChain and RAG
+                techniques alongside my published AIP paper.</p>
+            <div class="modal-meta">
+                <div><span>Built with</span>Python · LangChain · ReactJS · HTML/CSS</div>
+                <div><span>Role</span>Frontend &amp; backend</div>
+                <div><span>Created</span>March 2024</div>
+            </div>
+            <div class="modal-links">
+                <a href="https://github.com/Kbansheen/rag-semantic-search-document-retrieval" target="_blank" rel="noopener" class="btn btn-solid btn-small">View on GitHub</a>
+                <a href="https://pubs.aip.org/aip/acp/article-abstract/3426/1/020016/3393206/Retrieval-augmented-generation-with-semantic" target="_blank" rel="noopener" class="btn btn-outline btn-small">Read the Paper</a>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal" id="modal-fmri" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+        <button type="button" class="modal-close" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-shots">
+            <img src="images/m2.png" alt="FMRI portal screenshot 1">
+            <img src="images/m3.png" alt="FMRI portal screenshot 2">
+            <img src="images/m4.png" alt="FMRI portal screenshot 3">
+        </div>
+        <div class="modal-body">
+            <h3>FMRI IT Service Portal</h3>
+            <p>Implemented and configured Fortis Memorial Research Institute's IT service tool
+                (ManageEngine ServiceDesk Plus), and built a companion request portal: a Bootstrap
+                frontend where users submit service requests, processed by PHP scripts and stored in
+                MySQL with real-time display for the IT team.</p>
+            <div class="modal-meta">
+                <div><span>Built with</span>HTML · CSS · Bootstrap · JavaScript · PHP · MySQL</div>
+                <div><span>Role</span>Frontend &amp; backend integration</div>
+                <div><span>Created</span>July 2023, during internship at FMRI (Fortis)</div>
+            </div>
+            <div class="modal-links">
+                <a href="https://github.com/Kbansheen/fmrii-website" target="_blank" rel="noopener" class="btn btn-solid btn-small">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal" id="modal-tindog" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+        <button type="button" class="modal-close" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-shots">
+            <img src="images/t2.png" alt="Tindog screenshot 1">
+            <img src="images/t3.png" alt="Tindog screenshot 2">
+        </div>
+        <div class="modal-body">
+            <h3>Tindog Website</h3>
+            <p>A fully functional, responsive landing page for TinDog built with HTML, CSS and Bootstrap —
+                gradient animations, card layouts, and a mobile-first responsive design.</p>
+            <div class="modal-meta">
+                <div><span>Built with</span>HTML · CSS · Bootstrap</div>
+                <div><span>Role</span>Frontend</div>
+                <div><span>Created</span>July 2022</div>
+            </div>
+            <div class="modal-links">
+                <a href="https://kbansheen.github.io/tindog-website/" target="_blank" rel="noopener" class="btn btn-solid btn-small">View Live</a>
+                <a href="https://github.com/Kbansheen/tindog-website" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal" id="modal-space" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+        <button type="button" class="modal-close" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-shots">
+            <img src="images/html.png" alt="Space website screenshot">
+        </div>
+        <div class="modal-body">
+            <h3>Space Tech Website</h3>
+            <p>A responsive space-technology landing page built with HTML, CSS and Bootstrap — clean
+                sections, gradient accents, consistent rendering across screen sizes.</p>
+            <div class="modal-meta">
+                <div><span>Built with</span>HTML · CSS · Bootstrap</div>
+                <div><span>Role</span>Frontend</div>
+                <div><span>Created</span>July 2022</div>
+            </div>
+            <div class="modal-links">
+                <a href="https://kbansheen.github.io/space-website/" target="_blank" rel="noopener" class="btn btn-solid btn-small">View Live</a>
+                <a href="https://github.com/Kbansheen/space-website" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- ======================= EXPERIENCE ======================= -->
+<section class="section section-alt" id="experience">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Journey</span>
+            <h2>Experience &amp; Education</h2>
+        </div>
 
+        <div class="two-col">
+            <div class="timeline-wrap reveal">
+                <h3 class="col-title">Experience</h3>
+                <div class="timeline">
+                    <div class="tl-item">
+                        <span class="tl-date">Jun 2024 – Jul 2024 · Gurugram, On-site</span>
+                        <h4>Data Analytics Intern (QlikSense) · <span>Power Grid Corporation of India Limited (POWERGRID)</span></h4>
+                        <p>Built a real-time visualization dashboard for POWERGRID's AM Risk Matrix, integrating
+                            multiple data sources to support risk management and decision-making.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">Nov 2023 – Dec 2023</span>
+                        <h4>Developer Virtual Intern · <span>Salesforce</span></h4>
+                        <p>Salesforce fundamentals, relationship and process automation, flows and security,
+                            Apex, testing and debugging, Lightning Web Components.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">Nov 2023 – Dec 2023</span>
+                        <h4>Azure Cloud Computing Intern · <span>SmartKnower</span></h4>
+                        <p>Cloud administration basics: creating and managing virtual machines, remote
+                            access using RDP.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">Jul 2023 – Aug 2023</span>
+                        <h4>IT Intern · <span>FMRI (Fortis Memorial Research Institute)</span></h4>
+                        <p>Implementation and configuration of ManageEngine ServiceDesk Plus and PACS
+                            software for hospital IT operations.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">Feb 2023 – Mar 2023</span>
+                        <h4>Developer Virtual Intern · <span>Accenture</span></h4>
+                        <p>Practical tasks covering technical requirements, architecture, testing and
+                            security.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">Oct 2020 – Dec 2020</span>
+                        <h4>Digital Marketing &amp; Entrepreneurship Intern · <span>Mindler</span></h4>
+                        <p>Career-oriented training drives and skill-development programmes with
+                            international speakers.</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="timeline-wrap reveal">
+                <h3 class="col-title">Education</h3>
+                <div class="timeline">
+                    <div class="tl-item">
+                        <span class="tl-date">2021 – 2025</span>
+                        <h4>B.Tech, Computer Science · <span>Amity University Haryana</span></h4>
+                        <p>Core computer science with focused work in AI, cloud computing and web
+                            technologies.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">2020 – 2021</span>
+                        <h4>Senior Secondary (CBSE) · <span>CCA School, Gurugram</span></h4>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">2018 – 2019</span>
+                        <h4>Secondary (ICSE) · <span>Lt. Atul Katarya Memorial School, Gurugram</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
- <script src="js/script.js"></script>
+<!-- ======================= CONTACT ======================= -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>Get in Touch</h2>
+            <p class="section-sub">Open to opportunities, research collaboration, or a quick chat about technology.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-form-wrap reveal">
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="input-control" placeholder="Your name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="input-control" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="input-control" placeholder="What is this about?" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="input-control" rows="5" placeholder="Your message…" required></textarea>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-solid" id="sendBtn">Send Message</button>
+                        <p class="form-status" id="formStatus" role="status"></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="contact-info reveal">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:banshofficial123@gmail.com">banshofficial123@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>Profiles</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/Kbansheen" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bansheen-kaur-a8120b227" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                        </a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=aLKNx3kAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@Bansheen_kaur" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Bansheen Kaur. Built with HTML, CSS &amp; JavaScript.</p>
+        <a href="https://github.com/Kbansheen/portfolio_bk" target="_blank" rel="noopener">View source on GitHub</a>
+    </div>
+</footer>
+
+<button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="js/script.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
